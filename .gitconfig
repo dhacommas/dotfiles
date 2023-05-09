@@ -51,7 +51,7 @@
 [user]
 	name = Dhaval Goti
 	email = dhavalgoti24@gmail.com
-	signingkey = 81F857C4178AE890
+	signingkey = 47A1DF3D1C663C4D
 [core]
 	autocrlf = input
 [commit]
