@@ -1,3 +1,53 @@
+# https://github.com/dandavison/delta/blob/master/themes.gitconfig
+[delta "woolly-mammoth"]
+    # author: https://github.com/Kr1ss-XD
+    commit-decoration-style = 232 130 box
+    commit-style = 232 bold italic 130
+    dark = true
+    file-added-label = [+]
+    file-copied-label = [C]
+    file-decoration-style = "#606018" overline
+    file-modified-label = [M]
+    file-removed-label = [-]
+    file-renamed-label = [R]
+    file-style = 232 bold 184
+    hunk-header-decoration-style = none
+    hunk-header-style = syntax bold italic 237
+    line-numbers = true
+    line-numbers-left-format = "{nm:>1}┊"
+    line-numbers-left-style = red
+    line-numbers-minus-style = red italic black
+    line-numbers-plus-style = green italic black
+    line-numbers-right-format = "{np:>1}┊"
+    line-numbers-right-style = green
+    line-numbers-zero-style = "#545474" italic
+    minus-emph-style = syntax bold "#780000"
+    minus-style = syntax "#400000"
+    plus-emph-style = syntax bold "#007800"
+    plus-style = syntax "#004000"
+    syntax-theme = zenburn
+    whitespace-error-style = "#280050" reverse
+    zero-style = syntax
+    blame-format = "{author:<18} ({commit:>7}) ┊{timestamp:^16}┊ "
+    blame-palette = "#101010 #200020 #002800 #000028 #202000 #280000 #002020 #002800 #202020"
+[delta]
+	navigate = true
+	features = woolly-mammoth
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
+[advice]
+	skippedCherryPicks = false
+[core]
+	abbrev = 12
+[pager]
+	diff = delta
+	show = delta
+[interactive]
+	diffFilter = delta --color-only
+[pretty]
+	fixes = Fixes: %h (\"%s\")
 [user]
 	name = Dhaval Goti
 	email = dhavalgoti24@gmail.com
@@ -6,3 +56,73 @@
 	autocrlf = input
 [commit]
 	gpgsign = true
+[pull]
+	rebase = true
+[push]
+	default = simple
+	autoSetupRemote = true
+[color]
+	ui = true
+[credential]
+	helper = cache --timeout=3000
+[rerere]
+	enabled = true
+[alias]
+	a = add
+    	add-signoff = "!EDITOR='sed -i -re s/^pick/e/' sh -c 'git rebase -i $1 && while test -f .git/rebase-merge/interactive; do git commit --signoff --amend --no-edit && git rebase --continue; done' -"
+	amc = "!xclip -out -selection clipboard | git am $@"
+	branches = branch -r --sort='-authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)'
+	c = commit
+	ca = commit -a
+	cam = commit -am
+	cp = cherry-pick --signoff
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	d = diff
+	dc = diff --cached
+	dcs = diff --stat --cached
+	ds = diff --stat
+	dsc = diff --stat --cached
+	export = archive --format zip --output
+	expire-reflog = "!git reflog expire --expire=\"$(date)\" --all"
+	fix = ca --fixup
+	ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ >> .gitignore ;}; gi"
+	kang = commit --amend --reset-author
+	lo = log --oneline
+	los = log --oneline --stat
+	lof = log --format=fixes
+	lst = ls-tree --full-tree -r HEAD
+	pf = push --force-with-lease
+	publish = "!git push origin --set-upstream $(git rev-parse --abbrev-ref HEAD)"
+	rc = rebase --continue
+	ru = remote update --prune
+	rv = remote -v
+	reword = "!EDITOR='sed -i -re s/^pick/e/' sh -c 'git rebase -i $1 && while test -f .git/rebase-merge/interactive; do git commit --amend && git rebase --continue;done' -"
+	s = status
+	squash = rebase -i --autosquash
+	su = submodule update --init --recursive
+	ss = show --stat
+	suicide = reset --hard
+	sw = "!git switch $(git branch | fzf | tr -d '*[:space:]')"
+[merge]
+	log = true
+[gc]
+	auto = 0
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[http]
+	postBuffer = 524288000
+[log]
+	follow = true
+[init]
+	defaultBranch = main
