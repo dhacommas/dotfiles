@@ -1,7 +1,7 @@
 #alias-custom
 
 alias aria='aria2c --conf-path=${HOME}/aria2/aria2.conf'
-alias pocomtp='aft-mtp-mount /home/dhacommas/mnt/sdcard/'
+alias pocomtp='aft-mtp-mount ~/mnt/sdcard/'
 alias poco='cd ~/mnt/sdcard/Internal" shared storage"'
 alias home='cd ~'
 alias Desktop='cd ~/Desktop'
