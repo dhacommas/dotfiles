@@ -49,9 +49,9 @@
 [pretty]
 	fixes = Fixes: %h (\"%s\")
 [user]
-	name = Dhaval Goti
-	email = dhavalgoti24@gmail.com
-	signingkey = 47A1DF3D1C663C4D
+	name = dhacommas
+	email = dhacommas@protonmail.com
+	signingkey = 0ABFCF76F06772AE
 [core]
 	autocrlf = input
 [commit]
