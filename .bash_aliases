@@ -1,7 +1,7 @@
 ###alias-custom###
 
 alias aria='aria2c'
-alias pocomtp='aft-mtp-mount /home/dhacommas/mnt/sdcard/'
+alias pocomtp='aft-mtp-mount ~/mnt/sdcard/'
 alias poco='cd ~/mnt/sdcard/Internal" shared storage"'
 alias home='cd ~'
 alias desktop='cd ~/Desktop'
@@ -67,7 +67,7 @@ alias pycharm='sh ~/Downloads/pycharm/bin/pycharm.sh'
 ##yt-dlp
 alias ytdlp='yt-dlp'
 ##yt-dlp_local
-alias video-local='cd ~/Downloads/ytdlp && yt-dlp --config-location .config/main.conf --config-location ./config/video.conf'
+alias video-local='cd ~/Downloads/ytdlp && yt-dlp --config-location ./config/main.conf --config-location ./config/video.conf'
 alias audio-local='cd ~/Downloads/ytdlp && yt-dlp --config-location ./config/main.conf --config-location ./config/audio.conf'
 alias playlist-local='cd ~/Downloads/ytdlp && yt-dlp --config-location ./config/main.conf --config-location ./config/playlist.conf'
 
